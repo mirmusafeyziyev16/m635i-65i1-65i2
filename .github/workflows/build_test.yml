@@ -1,0 +1,39 @@
+name: Build_Test
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          test -f index.html
+          echo "index.html found"
+
+      - name: HTML sanity checks
+        run: |
+          grep -q "<html" index.html
+          grep -q "</html>" index.html
+          grep -q "<title>" index.html
+          echo "Basic HTML checks passed"
+
+      - name: Create CI artifact
+        run: |
+          mkdir -p ci-artifact
+          cp index.html ci-artifact/
+          [ -f style.css ] && cp style.css ci-artifact/ || true
+          [ -f script.js ] && cp script.js ci-artifact/ || true
+          echo "CI artifact prepared"
+
+      - name: Upload CI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-site-snapshot
+          path: ci-artifact/

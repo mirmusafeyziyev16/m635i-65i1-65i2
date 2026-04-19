@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirmusa Feyziyev - CV</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --paper: #ffffff;
+      --text: #1c2433;
+      --muted: #5d6a80;
+      --primary: #0f766e;
+      --primary-soft: #e6fffb;
+      --accent: #2563eb;
+      --border: #e6eaf2;
+      --chip: #eef2ff;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
+      background:
+        radial-gradient(circle at 85% -10%, #dbeafe 0%, rgba(219, 234, 254, 0) 35%),
+        radial-gradient(circle at -10% 20%, #ccfbf1 0%, rgba(204, 251, 241, 0) 40%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+
+    .cv {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .top {
+      padding: 32px;
+      background: linear-gradient(130deg, #0f766e 0%, #0b9488 45%, #1d4ed8 100%);
+      color: #fff;
+    }
+
+    .name {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.15;
+      letter-spacing: 0.4px;
+    }
+
+    .headline {
+      margin: 0;
+      opacity: 0.96;
+      font-size: 1.04rem;
+      max-width: 920px;
+    }
+
+    .contact {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .contact span {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 0;
+    }
+
+    .main {
+      padding: 28px 28px 34px;
+      border-right: 1px solid var(--border);
+    }
+
+    .side {
+      padding: 28px 24px 34px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .summary {
+      margin: 0;
+      color: #243045;
+    }
+
+    .item {
+      margin-bottom: 16px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #142038;
+    }
+
+    .meta {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: #263349;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: var(--chip);
+      border: 1px solid #dbe7ff;
+      color: #1e3a8a;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .mini {
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .mini:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .mini h3 {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .mini p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .container {
+        margin: 0;
+        max-width: none;
+        padding: 0;
+      }
+
+      .cv {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="cv">
+      <header class="top">
+        <h1 class="name">Mirmusa Feyziyev</h1>
+        <p class="headline">
+          QA Manual Tester with a strong base in cybersecurity and Linux administration. Focused on manual, API, and database testing with hands-on Agile collaboration and security-minded validation.
+        </p>
+        <div class="contact">
+          <span>Phone: +994-50-475-96-95</span>
+          <span>Email: feyziyevmirmusa@gmail.com</span>
+          <span>Address: Baku, Azerbaijan</span>
+          <span>Social: LinkedIn</span>
+        </div>
+      </header>
+
+      <div class="content">
+        <main class="main">
+          <section class="section">
+            <h2>Summary</h2>
+            <p class="summary">
+              Detail-oriented QA Manual Tester with a strong foundation in cybersecurity and Linux administration. Skilled in designing and executing test cases, reporting defects, and validating functionality through manual, API, and database testing. Experienced with Jira, QASE, Postman, Swagger, SQL, and Azure DevOps in Agile teams. Possess hands-on knowledge of vulnerability assessment, entry-level penetration testing, and SOC practices, combining offensive and defensive security perspectives. Dedicated to continuous learning with strong problem-solving and cross-functional collaboration skills.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2>Experience</h2>
+
+            <article class="item">
+              <h3>QA/QC Specialist - Digital Research Lab, Ei-Group</h3>
+              <div class="meta">01/2026 - Present</div>
+              <ul>
+                <li>Tested web applications for consistent functionality, usability, and performance across environments.</li>
+                <li>Reviewed technical documentation for accuracy and alignment with requirements.</li>
+                <li>Designed, maintained, and executed comprehensive test cases for reliability and coverage.</li>
+                <li>Managed test cases in Azure DevOps for traceability and reporting.</li>
+                <li>Performed API testing with Postman and Swagger for endpoint, structure, and error validation.</li>
+                <li>Conducted performance testing and documented key findings.</li>
+                <li>Tested CRDT-based synchronization behavior and data consistency in distributed workflows.</li>
+                <li>Used Codex and MCP server tools to support test case generation and efficient updates.</li>
+                <li>Performed SQL-based database validation for data integrity and CRUD operations.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <h3>QA Engineer - SAFAROFF Agency</h3>
+              <div class="meta">09/2025 - 01/2026</div>
+              <ul>
+                <li>Tested web and cross-platform mobile applications for functionality and consistency.</li>
+                <li>Validated technical documentation against project requirements.</li>
+                <li>Created and executed test cases for feature behavior and product stability.</li>
+                <li>Performed API testing using Postman and Swagger.</li>
+                <li>Conducted performance testing and reported system behavior under load.</li>
+                <li>Prepared and maintained bug reports, summary reports, and test plans.</li>
+                <li>Performed SQL-based database testing for backend logic and integrity checks.</li>
+                <li>Executed smoke, functional, regression, and UI testing across browsers.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <h3>QA Manual - Andersen &amp; IDDA</h3>
+              <div class="meta">07/2025 - 09/2025</div>
+              <ul>
+                <li>Designed and executed manual test cases from user stories and acceptance criteria.</li>
+                <li>Used Jira for project management and sprint tracking in Agile ceremonies.</li>
+                <li>Logged and tracked defects in QASE with clear reproduction steps and severities.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <h3>QA Manual (Part-time) - Suruculuk Imtahani</h3>
+              <div class="meta">01/2024 - Present</div>
+              <ul>
+                <li>Assisted in writing and executing tests for web and mobile applications.</li>
+                <li>Reported bugs with Jira and collaborated with developers on verification.</li>
+                <li>Participated in smoke and regression testing before releases.</li>
+                <li>Reviewed user stories to detect missing acceptance criteria.</li>
+                <li>Performed API testing with Postman and SQL-based database checks.</li>
+                <li>Presented sprint test reports covering coverage, defect status, and release readiness.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <h3>Linux Administrator - ABB Tech</h3>
+              <div class="meta">05/2023 - 09/2023</div>
+              <ul>
+                <li>Completed training on Linux architecture, installation, LVM, RAID, file systems, and partition management.</li>
+                <li>Worked with user/group management, permissions, ACLs, and system hardening fundamentals.</li>
+                <li>Studied monitoring, logging, cron scheduling, network layers, and TCP/IP concepts.</li>
+              </ul>
+            </article>
+
+            <article class="item">
+              <h3>Penetration Tester Trainee - Azerbaijan Cybersecurity Center</h3>
+              <div class="meta">08/2023 - 12/2023</div>
+              <ul>
+                <li>Covered ethical hacking fundamentals, recon, vulnerability scanning, exploitation, and reporting.</li>
+                <li>Studied Python, PowerShell scripting, networking, cloud security, and Microsoft security stack.</li>
+                <li>Practiced web application security testing including SQLi, XSS, file upload flaws, and CSRF.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="section">
+            <h2>Activities and Projects</h2>
+            <article class="item">
+              <h3>Hackathon: WAF (ML-Based Web Application Firewall)</h3>
+              <ul>
+                <li>Led server development and deployment for stable backend connectivity.</li>
+                <li>Developed front-end interfaces for better usability and navigation.</li>
+              </ul>
+            </article>
+            <article class="item">
+              <h3>Capstone Project: Malicious PE File Classification with Machine Learning</h3>
+              <ul>
+                <li>Built front-end interfaces to improve user engagement and interaction flow.</li>
+                <li>Researched and sourced suspicious files for testing and validation.</li>
+              </ul>
+            </article>
+          </section>
+        </main>
+
+        <aside class="side">
+          <section class="section">
+            <h2>Education</h2>
+            <div class="mini">
+              <h3>Azerbaijan State Oil and Industry University</h3>
+              <p>Bachelor of Computer Science<br />Sep 2021 - May 2025</p>
+            </div>
+            <div class="mini">
+              <h3>Azerbaijan Technical University</h3>
+              <p>Master of Data Analysis<br />Sep 2025 - May 2027</p>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Certifications and Awards</h2>
+            <div class="chips">
+              <span class="chip">eWPTx Candidate</span>
+              <span class="chip">TryHackMe Top 1%</span>
+              <span class="chip">Pre-Security Path</span>
+              <span class="chip">Jr. Penetration Tester Path</span>
+              <span class="chip">Complete Beginner</span>
+              <span class="chip">CompTIA Pentest+</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="chips">
+              <span class="chip">Manual Testing</span>
+              <span class="chip">API Testing</span>
+              <span class="chip">Postman</span>
+              <span class="chip">Swagger</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Jira</span>
+              <span class="chip">QASE</span>
+              <span class="chip">Azure DevOps</span>
+              <span class="chip">Linux</span>
+              <span class="chip">Python</span>
+              <span class="chip">Bash</span>
+              <span class="chip">PowerShell</span>
+              <span class="chip">Nmap</span>
+              <span class="chip">Metasploit</span>
+              <span class="chip">Burp Suite</span>
+              <span class="chip">Hashcat</span>
+              <span class="chip">OWASP Top 10</span>
+              <span class="chip">Wireshark</span>
+              <span class="chip">Splunk</span>
+              <span class="chip">ELK Stack</span>
+              <span class="chip">QRadar</span>
+              <span class="chip">Wazuh</span>
+              <span class="chip">Nessus</span>
+              <span class="chip">OpenVAS</span>
+              <span class="chip">Active Directory</span>
+              <span class="chip">Firewall / IDS / IPS / VPN</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Soft Skills</h2>
+            <div class="chips">
+              <span class="chip">Communication</span>
+              <span class="chip">Problem Solving</span>
+              <span class="chip">Teamwork</span>
+              <span class="chip">Leadership</span>
+              <span class="chip">Research</span>
+              <span class="chip">Time Management</span>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>Languages</h2>
+            <div class="chips">
+              <span class="chip">Azerbaijani - Native</span>
+              <span class="chip">English - C1</span>
+              <span class="chip">Turkish - B2</span>
+              <span class="chip">Russian - C2</span>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

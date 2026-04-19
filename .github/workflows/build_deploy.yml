@@ -1,0 +1,49 @@
+name: Build_Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build final release output
+        run: |
+          mkdir -p release/site
+          cp index.html release/site/
+          [ -f style.css ] && cp style.css release/site/ || true
+          [ -f script.js ] && cp script.js release/site/ || true
+
+          echo "deployment_time_utc=$(date -u '+%Y-%m-%d %H:%M:%S')" > release/deploy-metadata.txt
+          echo "commit_sha=$GITHUB_SHA" >> release/deploy-metadata.txt
+          echo "branch=$GITHUB_REF_NAME" >> release/deploy-metadata.txt
+          echo "pipeline=Build_Deploy" >> release/deploy-metadata.txt
+          echo "mode=simulated" >> release/deploy-metadata.txt
+
+          tar -czf release/site-release.tar.gz -C release site deploy-metadata.txt
+
+      - name: Simulate deployment stages
+        run: |
+          echo "[SIMULATION] Stage 1/3 - Preparing deployment target"
+          sleep 1
+          echo "[SIMULATION] Stage 2/3 - Uploading package site-release.tar.gz"
+          sleep 1
+          echo "[SIMULATION] Stage 3/3 - Running post-deploy health check"
+          if [ -f release/site/index.html ]; then
+            echo "[SIMULATION] Health check: PASS (index.html found)"
+          else
+            echo "[SIMULATION] Health check: FAIL"
+            exit 1
+          fi
+
+      - name: Upload CD artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cd-release-package
+          path: release/
