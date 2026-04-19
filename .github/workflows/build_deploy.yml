@@ -1,17 +1,16 @@
+# .github/workflows/build_deploy.yml
 name: Build_Deploy
-
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build_Test"]
+    types: [completed]
 
 jobs:
   build_deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
