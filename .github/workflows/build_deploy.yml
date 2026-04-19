@@ -2,9 +2,8 @@ name: Build_Deploy
 
 on:
   push:
-    branches:
-      - main        # auto-run when code is pushed/merged to main
-  workflow_dispatch: # optional manual run button
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build_deploy:
